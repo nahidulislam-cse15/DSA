@@ -2,19 +2,20 @@ package main
 
 import "fmt"
 
-func selection_sort(a []int){
-	for i:=0;i<len(a)-1;i++ {
-        min:=i
-        for j:=i+1;j<len(a);j++ {
-            if (a[j] <a[min]){
-                min=j
-			}
-}
-a[i],a[min]=a[min],a[i]
+func insertion_sort(a []int){
+
+	for i:=1;i<len(a);i++ {
+        data:=a[i]
+		j:=i-1
+        for j>=0 && a[j] > data {
+				a[j+1]=a[j]
+				j-=1
+				}
+		a[j+1]=data
 }
 fmt.Println(a)
 }
 func main() {
-	a := []int{4, 3, 2, 5, 1,10,7,100,23,27}
-	selection_sort(a)
+	a := []int{4, 3, 2, 5, 25,10,7,100,23,27}
+	insertion_sort(a)
 }
