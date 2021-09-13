@@ -4,14 +4,14 @@ def binary_search(a,target):
         mid=(left+right)//2
         if a[mid] == target:
             return mid
-        else:
-            if a[mid] <target:
+        
+        elif a[mid] <target:
                 left = mid+1
-            else:
+        else:
                 right = mid-1
     return -1
-a=[1,2,3,4,5,7,200,400]
-target=200
+a=[1,2,3,4,5]
+target=5
 index=binary_search(a,target)
 if(index==-1):
     print("not Found")
